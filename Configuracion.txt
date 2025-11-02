@@ -1,0 +1,18 @@
+Paso 1:Instala todos los paquetes
+yarn install
+
+Paso 2:Genera la clave local cifrada
+yarn account:import
+
+Paso 3:Instala paquetes de Supabase
+yarn add @supabase/supabase-js 
+
+yarn chain
+
+yarn deploy
+
+yarn start
+
+
+
+
