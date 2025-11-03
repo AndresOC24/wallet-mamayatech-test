@@ -84,33 +84,43 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
-    /* En app/globals.css */
+/* app/globals.css */
 
+  /* --- Desktop por defecto (>= lg) --- */
   html, body {
-    height: 100%; /* Asegura que html y body ocupen el 100% de la altura de la ventana */
+    height: 100%;
     margin: 0;
-    overflow: hidden; /* Esto es CLAVE: oculta las barras de desplazamiento si el contenido no las fuerza */
+    overflow: hidden;
   }
 
   body {
     background-image: url('/img/logo_mamaya.png') !important;
-    background-size: cover !important; /* Cubre todo el área sin dejar espacios */
-    background-position: center !important; /* Centra la imagen */
-    background-repeat: no-repeat !important; /* Evita que la imagen se repita */
-    background-attachment: fixed !important; /* Fija la imagen de fondo mientras el contenido se desplaza */
-    min-height: 100vh; /* Asegura que el body tenga al menos el 100% de la altura de la ventana */
-    /* Removemos el overflow-x-hidden del body para evitar conflictos con el overflow del html,
-      el overflow: hidden de html, body ya maneja el scroll general si es necesario
-      O, si realmente quieres un scroll, el scroll debe ser del contenido principal y no del body/html
-    */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
   }
 
-  /* Esto hace que el color de fondo por defecto del tema de Scaffold-ETH 
-    sea transparente, dejando ver la imagen de 'body'.
-  */
+  /* Color base transparente de Scaffold-ETH para dejar ver el body */
   [data-theme] .bg-base-300 {
     background-color: transparent !important;
   }
+
+  /* --- MODO MÓVIL/TABLET (≤ 1024px) --- */
+  @media (max-width: 1024px) {
+    html, body {
+      /* Permite scroll si el contenido lo requiere en mobile */
+      overflow: auto;
+    }
+    body {
+      /* Quita la imagen y usa color plano */
+      background-image: none !important;
+      background-color: #F5821F !important;
+      background-attachment: scroll !important; /* evita “brincos” en iOS/Android */
+    }
+  }
+
   p {
     margin: 1rem 0;
   }

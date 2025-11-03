@@ -1,15 +1,20 @@
-// En components/Header.tsx
-
+// components/Header.tsx
 "use client";
 
 export const Header = () => {
   return (
-    <div className="sticky lg:static top-0 navbar bg-transparent min-h-0 flex-shrink-0 justify-between z-20 shadow-none px-0 sm:px-2">
-      {/* Dejamos el inicio vacío para empujar el botón a la derecha */}
-      <div className="navbar-start w-auto lg:w-1/2"></div>
+    <div className="sticky lg:static top-0 navbar bg-transparent min-h-0 flex-shrink-0 justify-between z-20 shadow-none px-2 sm:px-3">
+      {/* IZQUIERDA: Logo solo en mobile/tablet (en desktop no se muestra) */}
+      <div className="navbar-start">
+        <img
+          src="/img/logo_sin_fondo.png"
+          alt="MamayaTech"
+          className="h-6 sm:h-8 w-auto lg:hidden ml-1"
+        />
+      </div>
 
-      {/* Botón "Mi Perfil" a la derecha */}
-      <div className="navbar-end flex-grow mr-4 mt-4">
+      {/* DERECHA: Botón Mi Perfil (siempre visible) */}
+      <div className="navbar-end mr-2 sm:mr-4 mt-3 sm:mt-4">
         <button className="btn bg-white text-black border-none rounded-lg shadow-md hover:bg-gray-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
