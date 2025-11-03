@@ -2,6 +2,7 @@
 "use client";
 
 import type { NextPage } from "next";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -13,9 +14,9 @@ const Home: NextPage = () => {
 
 {/* 2. Fila de Botones */}
 <div className="flex flex-col sm:flex-row w-full max-w-4xl justify-center gap-3 sm:gap-4 md:gap-6 mx-auto">
-  <button className="btn w-full sm:btn-wide bg-white text-gray-800 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-shadow">
+  <Link href="/giftcards" className="btn w-full sm:btn-wide bg-white text-gray-800 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-shadow">
     Gift Card
-  </button>
+  </Link>
   <button className="btn w-full sm:btn-wide bg-gray-800 text-white text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-shadow">
     Certificados
   </button>

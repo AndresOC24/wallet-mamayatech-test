@@ -1,16 +1,20 @@
 // components/Header.tsx
 "use client";
 
+import Link from "next/link";
+
 export const Header = () => {
   return (
-    <div className="sticky lg:static top-0 navbar bg-transparent min-h-0 flex-shrink-0 justify-between z-20 shadow-none px-2 sm:px-3">
-      {/* IZQUIERDA: Logo solo en mobile/tablet (en desktop no se muestra) */}
+    <div className="sticky lg:static top-0 navbar bg-[#F5821F] min-h-0 flex-shrink-0 justify-between z-50 shadow-none px-2 sm:px-3">
+      {/* IZQUIERDA: Logo clicable (visible en todos los tamaños) */}
       <div className="navbar-start">
-        <img
-          src="/img/logo_sin_fondo.png"
-          alt="MamayaTech"
-          className="h-6 sm:h-8 w-auto lg:hidden ml-1"
-        />
+        <Link href="/" className="cursor-pointer">
+          <img
+            src="/img/logo_sin_fondo.png"
+            alt="MamayaTech"
+            className="h-6 sm:h-8 lg:h-10 w-auto ml-1"
+          />
+        </Link>
       </div>
 
       {/* DERECHA: Botón Mi Perfil (siempre visible) */}
