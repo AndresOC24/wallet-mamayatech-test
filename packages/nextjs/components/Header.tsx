@@ -19,7 +19,7 @@ export const Header = () => {
 
       {/* DERECHA: Botón Mi Perfil (siempre visible) */}
       <div className="navbar-end mr-2 sm:mr-4 mt-3 sm:mt-4">
-        <button className="btn bg-white text-black border-none rounded-lg shadow-md hover:bg-gray-200">
+        <Link href="/profile" className="btn bg-white text-black border-none rounded-lg shadow-md hover:bg-gray-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -35,7 +35,7 @@ export const Header = () => {
             />
           </svg>
           Mi Perfil
-        </button>
+        </Link>
       </div>
     </div>
   );
